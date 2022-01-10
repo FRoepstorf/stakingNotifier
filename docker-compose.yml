@@ -1,0 +1,37 @@
+version: '3.4'
+
+services:
+#  localstack:
+#    image: localstack/localstack
+#    ports:
+#      - '4566:4566'
+#    environment:
+#      SERVICES: s3
+#      DEBUG: 1
+#    volumes:
+#      - ./docker/localstack/services:/docker-entrypoint-initaws.d
+#      - .:/app:rw
+#    env_file:
+#      - .env
+
+  coverage:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: coverage
+    volumes:
+      - .:/var/task:rw
+    entrypoint: ''
+    env_file:
+      - .env
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    volumes:
+      - .:/var/task:rw
+    entrypoint: ''
+    env_file:
+      - .env

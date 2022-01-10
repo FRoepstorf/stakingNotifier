@@ -1,0 +1,14 @@
+{
+    "name": "froepstorf/stakenotification",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Froepstorf\\Stakenotification\\": "src/"
+        }
+    },
+    "require": {
+        "php-di/php-di": "^6.3",
+        "bref/bref": "^1.5",
+        "guzzlehttp/guzzle": "^7.4"
+    }
+}
