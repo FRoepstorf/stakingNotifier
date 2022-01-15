@@ -5,6 +5,9 @@ namespace Froepstorf\Stakenotification\Domain;
 
 use Froepstorf\Stakenotification\Exception\EnvironmentVariableNotFoundException;
 
+/**
+ * @codeCoverageIgnore
+ */
 final class EnvironmentReader
 {
 	public function getEnvironment(): string
