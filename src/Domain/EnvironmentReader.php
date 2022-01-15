@@ -5,11 +5,21 @@ namespace Froepstorf\Stakenotification\Domain;
 
 use Froepstorf\Stakenotification\Exception\EnvironmentVariableNotFoundException;
 
-class EnvironmentReader
+final class EnvironmentReader
 {
 	public function getEnvironment(): string
 	{
 		return $this->readFromEnvironment('ENVIRONMENT');
+	}
+
+	public function getTelegramBaseUrl(): string
+	{
+		return $this->readFromEnvironment('TELEGRAM_BASE_URL');
+	}
+
+	public function getChatId(): string
+	{
+		return $this->readFromEnvironment('CHAT_ID');
 	}
 
 	private function readFromEnvironment(string $key): string
